@@ -20,7 +20,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-3" id="col">
+        <div class="col-md-4" id="col">
             <h3>Waiting to be devoured!</h3>
             <br>
             <ul>
@@ -41,7 +41,7 @@
             <form class="create-form">
                 <div class="form-group">
                     <label for="burgerName">
-                        <h4>Burger:</h4>
+                        <h4>Burger Name:</h4>
                     </label>
                     <input type="text" id="burgerName" name="burger">
                     <br>
@@ -62,10 +62,9 @@
             <ul>
                 {{#each burgers}} {{#if devoured}}
                 <div id="{{this.id}}" name="{{this.burger_name}}">
-                    <button onclick="deleteFlight({{id}}, '{{this.burger_name}}')" class="delete"
-                        type="button">X</button>
-                    <span><strong> {{this.id}} - </strong></span>
-                    <p>Mmm..that flight was
+                    <p><button onclick="deleteFlight({{id}}, '{{this.burger_name}}')" class="delete"
+                            type="button">X</button><img src="../assets/img/{{planet}}.jpg" class="{{planet}}image" />
+                      <br>  Mmm..that flight to <b>{{planet}}</b></br> had a great
                         <b>{{burger_name}}</b>
                     </p>
                 </div>

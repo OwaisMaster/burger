@@ -8,8 +8,24 @@ body {
     background-size: contain no-repeat;
 }
 
+img {
+    width: 100px; /* you can use % */
+    height: auto;
+}
+#footerCopy {
+    margin-right: auto;
+}
+
+#footerName {
+margin-left: auto;
+}
+
 footer {
     background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
 }
 
 div.row {

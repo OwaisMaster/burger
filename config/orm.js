@@ -11,13 +11,13 @@ var orm = {
         });
     },
 
-    insertOne: function (table, valName, cb) {
-        var queryString = `INSERT INTO ${table} (burger_name) VALUES (?)`;
+    insertOne: function (table, valName, columnSet, cb) {
+        var queryString = `INSERT INTO ${table} (burger_name, planet) VALUES ('${valName}','${columnSet}')`;
 
         console.log(queryString);
         console.log("After queryString: " + valName);
 
-        connection.query(queryString, [valName], function (error, result) {
+        connection.query(queryString, function (error, result) {
             if (error) {
                 throw error;
             }

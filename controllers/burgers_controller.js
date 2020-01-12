@@ -16,9 +16,10 @@ router.get("/", function (req, res) {
 
 router.post("/api/burgers", function (req, res) {
     console.log('erergarsdgasgd');
-    burger.insert(req.body.name, function (Result) {
+    console.log(req.body);
+    burger.insert(req.body.name, req.body.planet, function (Result) {
         res.json({ id: Result.insertId });
-        console.log("Controller sats: " + req.body.name );
+        console.log("Controller sats: " + req.body.name);
     });
 });
 
