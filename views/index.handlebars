@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h1>Welcome to Galaxy Burgers!
+                        <i class="fas fa-utensils"></i>
+                    </h1>
+                    <br>
+                    <h2>Eat and be taken out of this world!
+                        <i class="fas fa-burn" id="fire"></i><i class="fas fa-space-shuttle"></i></h2>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3" id="col">
+            <h3>Waiting to be devoured!</h3>
+            <br>
+            <ul>
+                {{#each burgers}} {{#unless devoured}}
+                <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                <li>{{burger_name}}
+                    <br><button onclick="devour({{id}})" class="takeOff" type="button">Take Off!</button>
+                </li>
+                <br> {{/unless}} {{/each}}
+            </ul>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-md-4" id="col">
+            <h3>Choose your flight plan</h3>
+            <br>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burgerName">
+                        <h4>Burger:</h4>
+                    </label>
+                    <input type="text" id="burgerName" name="burger">
+                    <br>
+                    <h4>Please select your flight type:</h4>
+                    <input type="radio" name="flightType" value="Mercury"> Spicy and hot near the Sun<br>
+                    <input type="radio" name="flightType" value="Mars"> Dry and short with precision<br>
+                    <input type="radio" name="flightType" value="Saturn"> Bumpy on the inside, beautiful on the out<br>
+                    <input type="radio" name="flightType" value="Earth"> One of a kind with a thousand sauces<br>
+                    <br>
+                    <button onclick="onClick()" type="button">Buckle Up</button>
+                </div>
+            </form ON>
+        </div>
+
+        <div class="col-md-3" id="col">
+            <h3>Landed!</h3>
+            <br>
+            <ul>
+                {{#each burgers}} {{#if devoured}}
+                <div id="{{this.id}}" name="{{this.burger_name}}">
+                    <button onclick="deleteFlight({{id}}, '{{this.burger_name}}')" class="delete"
+                        type="button">X</button>
+                    <span><strong> {{this.id}} - </strong></span>
+                    <p>Mmm..that flight was
+                        <b>{{burger_name}}</b>
+                    </p>
+                </div>
+                {{/if}} {{/each}}
+            </ul>
+            <br>
+            <br>
+        </div>
+
+    </div>
+</div>
